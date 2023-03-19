@@ -17,7 +17,7 @@ class PieChartState extends State {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.7,
+      aspectRatio: 1.8,
       child: Row(
         children: <Widget>[
           Expanded(
@@ -40,8 +40,8 @@ class PieChartState extends State {
                     },
                   ),
                   borderData: FlBorderData(
-                    show: false,
-                  ),
+                      show: true,
+                      border: Border.all(color: Colors.white, width: .5)),
                   sectionsSpace: 0,
                   centerSpaceRadius: 35,
                   sections: showingSections(),

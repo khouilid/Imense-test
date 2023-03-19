@@ -23,7 +23,7 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   int _selectedPageIndex = 1;
-  
+
   void _selectPage(int index) {
     setState(() {
       _selectedPageIndex = index;
@@ -75,45 +75,38 @@ class _BodyState extends State<Body> {
             shape: const CircularNotchedRectangle(),
             notchMargin: 0.02,
             clipBehavior: Clip.antiAlias,
-            color: Colors.red,
-            child: SizedBox(
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+            color: Colors.white.withOpacity(0),
+            child: BottomNavigationBar(
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              onTap: _selectPage,
+              iconSize: 30.0,
+              unselectedItemColor: Colors.grey,
+              selectedItemColor: AppColors.primaryColor,
+              currentIndex: 5,
+              items: [
+                const BottomNavigationBarItem(icon: Icon(null), label: ''),
+                BottomNavigationBarItem(
+                    icon: NavBarIcon(
+                        clicked: _selectedPageIndex == 1,
+                        iconPath: 'assets/imgs/svg/dashbord.svg'),
+                    label: ''),
+                const BottomNavigationBarItem(
+                  icon: Icon(null),
+                  label: '',
                 ),
-                child: BottomNavigationBar(
-                  showSelectedLabels: false,
-                  showUnselectedLabels: false,
-                  onTap: _selectPage,
-                  iconSize: 30.0,
-                  unselectedItemColor: Colors.grey,
-                  selectedItemColor: AppColors.primaryColor,
-                  currentIndex: 5,
-                  items: [
-                    const BottomNavigationBarItem(icon: Icon(null), label: ''),
-                    BottomNavigationBarItem(
-                        icon: NavBarIcon(
-                            clicked: _selectedPageIndex == 1,
-                            iconPath: 'assets/imgs/svg/dashbord.svg'),
-                        label: ''),
-                    const BottomNavigationBarItem(
-                      icon: Icon(null),
-                      label: '',
-                    ),
-                    const BottomNavigationBarItem(icon: Icon(null), label: ''),
-                    BottomNavigationBarItem(
-                        icon: NavBarIcon(
-                            clicked: _selectedPageIndex == 4,
-                            iconPath: 'assets/imgs/svg/GLASS.svg'),
-                        label: ''),
-                    BottomNavigationBarItem(
-                        icon: NavBarIcon(
-                            clicked: _selectedPageIndex == 5,
-                            iconPath: 'assets/imgs/svg/report.svg'),
-                        label: ''),
-                  ],
-                ),
-              ),
+                const BottomNavigationBarItem(icon: Icon(null), label: ''),
+                BottomNavigationBarItem(
+                    icon: NavBarIcon(
+                        clicked: _selectedPageIndex == 4,
+                        iconPath: 'assets/imgs/svg/GLASS.svg'),
+                    label: ''),
+                BottomNavigationBarItem(
+                    icon: NavBarIcon(
+                        clicked: _selectedPageIndex == 5,
+                        iconPath: 'assets/imgs/svg/report.svg'),
+                    label: ''),
+              ],
             ),
           ),
           floatingActionButtonLocation:
@@ -123,6 +116,7 @@ class _BodyState extends State<Body> {
               child: Container(
                 decoration: BoxDecoration(
                     color: AppColors.primaryColor,
+                    
                     borderRadius: BorderRadius.circular(50)),
                 width: 60.0,
                 height: 60.0,
@@ -143,7 +137,7 @@ class _BodyState extends State<Body> {
                 ),
               )),
           body: Container(
-            padding: EdgeInsets.only(right: 10, left: 10),
+            padding: const EdgeInsets.only(right: 10, left: 10),
             width: double.infinity,
             height: MediaQuery.of(context).size.height,
             child: Stack(

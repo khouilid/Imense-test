@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:noname/config/appColors.dart';
 import 'package:noname/components/dropDownCard.dart';
@@ -42,10 +43,11 @@ class ManualAlertScreen extends StatelessWidget {
         ],
         title: Text(
           'Manual alert',
-          style: TextStyle(
-              color: HexColor("#666666"),
-              fontWeight: FontWeight.w500,
-              fontSize: 16),
+          style: GoogleFonts.roboto(
+              textStyle: TextStyle(
+                  color: HexColor("#666666"),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16)),
         ),
       ),
       body: Container(
