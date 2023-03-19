@@ -9,7 +9,6 @@ class PaginationList extends StatefulWidget {
 }
 
 class _PaginationListState extends State<PaginationList> {
-  
   final List<String> _menuItems = [
     '10',
     '9',
@@ -61,6 +60,7 @@ class _PaginationListState extends State<PaginationList> {
               itemBuilder: (context, index) {
                 return Container(
                   width: 50,
+
                   margin: const EdgeInsets.only(right: 3),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(

@@ -26,6 +26,7 @@ class _TxtFilterState extends State<TxtFilter> {
       padding: const EdgeInsets.only(right: 5),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+            padding:EdgeInsets.all(6),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

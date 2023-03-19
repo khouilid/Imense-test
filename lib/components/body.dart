@@ -73,10 +73,12 @@ class _BodyState extends State<Body> {
           ),
           bottomNavigationBar: BottomAppBar(
             shape: const CircularNotchedRectangle(),
+            // elevation: 0,
             notchMargin: 0.02,
             clipBehavior: Clip.antiAlias,
             color: Colors.white.withOpacity(0),
             child: BottomNavigationBar(
+              backgroundColor: Colors.white.withOpacity(0),
               showSelectedLabels: false,
               showUnselectedLabels: false,
               onTap: _selectPage,
@@ -94,6 +96,7 @@ class _BodyState extends State<Body> {
                 const BottomNavigationBarItem(
                   icon: Icon(null),
                   label: '',
+
                 ),
                 const BottomNavigationBarItem(icon: Icon(null), label: ''),
                 BottomNavigationBarItem(
@@ -116,7 +119,6 @@ class _BodyState extends State<Body> {
               child: Container(
                 decoration: BoxDecoration(
                     color: AppColors.primaryColor,
-                    
                     borderRadius: BorderRadius.circular(50)),
                 width: 60.0,
                 height: 60.0,
@@ -124,7 +126,7 @@ class _BodyState extends State<Body> {
                   shape: const CircleBorder(),
                   elevation: 0.0,
                   child: const Icon(
-                    Icons.add,
+                    Icons.add_rounded,
                     size: 35,
                     color: Colors.white,
                   ),

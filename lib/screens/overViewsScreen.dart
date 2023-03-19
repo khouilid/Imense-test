@@ -31,7 +31,7 @@ class _OverViewsScreenState extends State<OverViewsScreen> {
         ),
         const GroupedTxtFilters(),
         const SizedBox(
-          height: 8,
+          height: 6,
         ),
         ChartCard(
             title: 'My observations',
